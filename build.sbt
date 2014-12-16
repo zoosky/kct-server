@@ -1,6 +1,6 @@
-name := "prismicio-starter"
+name := "kct-server"
 
-version := "1.2"
+version := "0.1"
 
 scalaVersion := "2.11.4"
 

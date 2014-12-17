@@ -5,6 +5,9 @@
 # Home page
 GET     /                                           controllers.Application.index(page: Int ?= 1)
 
+GET     /indexold                                  controllers.Application.indexold
+
+
 # Document detail
 GET     /documents/$id<[-_a-zA-Z0-9]{16}>/:slug     controllers.Application.detail(id, slug)
 

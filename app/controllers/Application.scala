@@ -31,6 +31,12 @@ object Application extends Controller with PrismicController {
     }
   }
 
+  // -- Home old page
+  def indexold = Action { implicit request =>
+      Ok(views.html.indexold())
+
+  }
+
   // -- Document detail
   def detail(id: String, slug: String) = PrismicAction { implicit request =>
     for {
@@ -60,4 +66,3 @@ object Application extends Controller with PrismicController {
   }
 
 }
-

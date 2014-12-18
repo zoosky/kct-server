@@ -6,6 +6,7 @@ scalaVersion := "2.11.4"
 
 libraryDependencies ++= Seq(
   "io.prismic" %% "scala-kit" % "1.2.16",
+  "com.typesafe.play.plugins" %% "play-plugins-mailer" % "2.3.1",
   "org.webjars" %% "webjars-play" % "2.3.0-2",
   "org.webjars" % "bootstrap" % "3.1.1-2",
   "org.webjars" % "jquery" % "2.1.1",

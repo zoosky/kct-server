@@ -2,10 +2,9 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de-CH" class="no-js">
     <head>
-        <title>@title</title>
-
+        <title>@title</title> <!-- TODO title>Kapp Coaching & Therapie</title-->
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
 
         <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))'>
@@ -14,9 +13,65 @@
         <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
 
 
-        @** Required for Previews and Experiments *@
-        <script src="//static.cdn.prismic.io/prismic.min.js"></script>
+        <head>
+
+          <!-- ==============================================
+          Title and Meta Tags
+          =============================================== -->
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="prismic-oauth-client-id" content="UzHD5AEAAA2GxOTo">
+
+          <!-- ==============================================
+          Favicons
+          =============================================== -->
+          <link rel="shortcut icon" href="@routes.Assets.at("images/favicon.png")">
+          <link rel="apple-touch-icon" href="@routes.Assets.at("images/apple-touch-icon.png")">
+          <link rel="apple-touch-icon" sizes="72x72" href="@routes.Assets.at("images/apple-touch-icon-72x72.png")">
+          <link rel="apple-touch-icon" sizes="114x114" href="@routes.Assets.at("images/apple-touch-icon-114x114.png")">
+
+          <!-- ==============================================
+          CSS
+          =============================================== -->
+          <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+          <link rel="stylesheet" href="@routes.Assets.at("stylesheets/font-awesome.min.css")">
+          <link rel="stylesheet" href="@routes.Assets.at("stylesheets/flexslider.css")">
+          <link rel="stylesheet" href="@routes.Assets.at("stylesheets/styles-9.css")">
+
+          <!-- ==============================================
+          Fonts
+          =============================================== -->
+          <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+          <!-- ==============================================
+          JS
+          =============================================== -->
+
+          <!--[if lt IE 9]>
+          <script src="@routes.Assets.at("javascripts/libs/respond.min.js")"></script>
+          <![endif]-->
+
+
+
+          <meta name="prismic-api" content="https://kapp.prismic.io/api">
+          <!--meta name="prismic-oauth-client-id" content=""-->
+
+          <!-- ==============================================
+          Scripts added to work with prismic.io and prismic.io singlepage
+          ===============================================
+        -->
+        <!--script src="@routes.Assets.at("javascripts/ejs-1.0.js")"></script-->
+        <!--script src="@routes.Assets.at("javascripts/prismic.io-1.0.19.min.js")"></script-->
+        <!--script src="@routes.Assets.at("javascripts/prismic.io-1.0.26.min.js")"></script-->
+
+        <!--script src="@routes.Assets.at("javascripts/prismic.io.2.js")"></script-->
+        <!--script src="@routes.Assets.at("javascripts/prismic.io-singlepage-1.0.0.js")"></script-->
+
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/libs/modernizr.min.js")"></script>
+
+
     </head>
+
     <body>
 
         <header>
@@ -36,9 +91,64 @@
 
          @footer()
 
-         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-         <script>window.jQuery || document.write('<script src="@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))")"><\/script>')</script>
+         <!-- ==============================================
+         SCRIPTS
+         =============================================== -->
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+         <!--
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+       -->
 
-         <script src="https://static.cdn.prismic.io/prismic.min.js"></script>
+       <script>window.jQuery || document.write('<script src="@routes.Assets.at("javascripts/libs/jquery-1.8.2.min.js")">\x3C/script>')</script>
+
+       <script src="@routes.Assets.at("javascripts/libs/bootstrap.min.js")"></script>
+       <script src="@routes.Assets.at("javascripts/jquery.scrollto.js")"></script>
+       <script src="@routes.Assets.at("javascripts/waypoints.min.js")"></script>
+       <script src="@routes.Assets.at("javascripts/jquery.masonry.min.js")"></script>
+       <script src="@routes.Assets.at("javascripts/jquery.flexslider.min.js")"></script>
+       <script src="@routes.Assets.at("javascripts/jquery.backstretch.min.js")"></script>
+       <!--
+       <script src="@routes.Assets.at("javascripts/twitterFetcher_v12.js")"></script>
+     -->
+     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+     <script src="@routes.Assets.at("javascripts/contact.js")"></script>
+     <script src="@routes.Assets.at("javascripts/scripts.js")"></script>
+
+
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+     <script>window.jQuery || document.write('<script src="@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))")"><\/script>')</script>
+
+     @** Required for Previews and Experiments *@
+     <script src="//static.cdn.prismic.io/prismic.min.js"></script>
+     <script src="https://static.cdn.prismic.io/prismic.min.js"></script>
+
+     <script>
+
+     var mapPoint = {
+       'lat': 46.9481412,
+       'lng': 7.4457913,
+       'zoom' : 16,
+       'infoText':'<p>Marktgasse 28\
+       <br/>3011 Bern\
+       <br/>5 Minuten vom Bahnhof zu Fuss</p>',
+       'linkText':'Adresse auf Google Maps',
+       'mapAddress':'Markgasse 38, 3011 Bern',
+       'icon': 'assets/images/pin-dark.png'
+     };
+
+     </script>
+     <!--
+     <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-56545758-1', 'auto');
+   ga('send', 'pageview');
+
+ </script>
+-->
+
     </body>
 </html>

@@ -1,0 +1,105 @@
+# Default messages
+
+# --- Constraints
+constraint.required=Required
+constraint.min=Minimum value: {0}
+constraint.max=Maximum value: {0}
+constraint.minLength=Minimum length: {0}
+constraint.maxLength=Maximum length: {0}
+constraint.email=Email
+
+# --- Formats
+format.date=Date (''{0}'')
+format.numeric=Numeric
+
+# --- Errors
+error.invalid=Invalid value
+error.required=This field is required
+error.number=Numeric value expected
+error.min=Must be greater or equal to {0}
+error.max=Must be less or equal to {0}
+error.minLength=Minimum length is {0}
+error.maxLength=Maximum length is {0}
+error.email=Valid email required
+error.pattern=Must satisfy {0}
+
+#MENU
+menu.home = Home
+menu.offer = Offer
+menu.producers = Producers
+menu.assoc = Association
+menu.more = More
+menu.news = News
+menu.docs = Documents & Links
+menu.contact = Contact
+menu.recipes = Recipes
+menu.login = Login
+
+#BUTTONS
+cancel = Cancel
+create = Create
+remove = Remove
+or = or
+hide = Hide
+yes = yes
+no = no
+ok = OK
+valid.input.field = A valid {0} is required
+
+btn.basket = Basket Of The Week
+btn.participation = I want to join
+btn.subscription.order = Order Subscription
+btn.meet.them = Meet them
+btn.goto.subscribe = I want to subscribe
+btn.back = Back
+btn.more.news = More News
+
+#FORM
+form.input.warning = Attention: 
+form.input.warning = form.input.warning
+form.intro = form.intro ENGLISH
+form.info.more = form.info.more
+form.info.membership = form.info.membership
+form.info.subscription_small = form.info.subscription_small
+form.info.subscription_large = form.info.subscription_large
+form.info.extraProducts = form.info.extraProducts
+form.info.maillinglist = form.info.maillinglist
+form.jsinfo.callme = form.info.callme
+
+form.label.firstname = Firstname ENGLISH
+form.label.lastname = Lastname
+form.label.email = Email
+form.label.email.example = me@example.ch
+form.label.phone = Phone
+form.label.company = Company
+form.label.address = Street
+form.label.postalcode = Postal Code
+form.label.city = City
+form.label.country = Country
+form.label.remark = Remarks 
+
+form.sum.title = Thanks For Your Request
+
+form.fix.errors=Oops. Please fix all errors
+
+#FOOTER
+footer.donations = Pour les dons et les cotisations: 
+footer.imprint = Impressum
+footer.statute = Statuts de l’association
+
+#LANG
+languages = Language
+lang.en = English
+lang.fr = Français
+lang.de = Deutsch
+
+# MISC
+not.found = Page not found
+page.not.found = The requested page could not be found.
+
+internal.error=Internal error. Nothing to do…
+
+
+notes.hint=Move the slider according to your position for each available choice
+user.name=Your name
+user.name.hint=Type your name to be able to submit your vote

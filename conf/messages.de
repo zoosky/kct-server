@@ -1,0 +1,106 @@
+# Default messages
+
+# --- Constraints
+constraint.required=Required
+constraint.min=Minimum value: {0}
+constraint.max=Maximum value: {0}
+constraint.minLength=Minimum length: {0}
+constraint.maxLength=Maximum length: {0}
+constraint.email=Email
+
+# --- Formats
+format.date=Date (''{0}'')
+format.numeric=Numeric
+
+# --- Errors
+error.invalid=Invalid value
+error.required = Dies ist ein Pflichtfeld
+error.number=Numeric value expected
+error.min=Must be greater or equal to {0}
+error.max=Must be less or equal to {0}
+error.minLength=Minimum length is {0}
+error.maxLength=Maximum length is {0}
+error.email= Die E-Mail Adresse ist ungültig
+error.pattern=Must satisfy {0}
+
+#MENU
+menu.home = Home
+menu.offer = Unser Angebot
+menu.producers = Produzenten
+menu.assoc = Verein
+menu.more = Mehr
+menu.news = Infos
+menu.docs = Dokumente & Links
+menu.contact = Kontakt
+menu.login = Anmelden
+
+#BUTTONS
+cancel = Abbrechen
+create = Erfassen
+remove = Entfernen
+or = oder
+hide = Verstecken
+yes = Ja
+no = Nein
+ok = OK
+valid.input.field = Eine gültige {0} ist erforderlich
+
+btn.basket = Korb der Woche
+btn.participation = Ich will mitmachen
+btn.subscription.order = Abo bestellen
+btn.meet.them = Kennenlernen
+btn.goto.subscribe = Zur Anmeldung
+btn.back = Zurück
+btn.more.news = Mehr Infos
+
+#FORM
+form.input.warning = Achtung: 
+form.input.warning.text = Bitte prüfen Sie nochmals die Eingaben
+form.intro = Ich möchte bei TerreVision mitmachen. 
+form.info.more = Bitte schicken Sie mir Informationen zu den Aktivitäten von TerreVision.
+form.info.membership = Ja, ich werde Mitglied von TerreVision, ohne Abo. Der Mitgliederbeitrag beträgt Fr. 50.- pro Jahr. 
+form.info.subscription_small = Ja, ich werde Mitglied bei TerreVision (Mitgliederbeitrag 50.-) und bestelle ein kleines Gemüse- und Früchteabo: 50 Wochenlieferungen à CHF 20.-  
+form.info.subscription_large = Ja, ich werde Mitglied bei TerreVision (Mitgliederbeitrag 50.-) und bestelle ein grosses Gemüse- und Früchteabo: 50 Wochenlieferungen à CHF 35.-.  
+form.info.extraProducts = Ja, ich werde Mitglied bei TerreVision (Mitgliederbeitrag 50.-) und abonniere Zusatzprodukte wie Brot, Käse, Eier, Rohmilch, Würste, Süssmost oder Wein. 
+#form.info.maillinglist
+form.info.join = Ja, ich möchte im Verein aktiv mitmachen.
+form.info.callme = Bitte nehmen Sie mit mir Kontakt auf. 
+
+form.label.firstname = Vorname
+form.label.lastname = Nachname
+form.label.email = E-Mail
+form.label.email.example = ich@beispiel.ch
+form.label.phone = Telefonnummer
+form.label.company = Firma (optional)
+form.label.address = Strasse Nr.
+form.label.postalcode = Postleitzahl
+form.label.city = Ort
+form.label.country = Land
+form.label.remark = Bemerkung
+
+form.sum.title = Danke für Ihre Anfrage
+
+form.fix.errors = Oui. Bitte korrigieren Sie die Fehler im Formular
+
+#FOOTER
+footer.donations = Für Spenden, Beiträge:
+footer.imprint = Impressum
+footer.statute = Verein Statuten
+
+#LANG
+languages = Langue
+lang.en = English
+lang.fr = Français
+lang.de = Deutsch
+
+# MISC
+not.found = Page non trouvée
+page.not.found = La page demandée n’a pas pu être trouvée.
+
+internal.error = Erreur interne. Il n’y a rien à faire…
+
+
+user.name = Votre nom
+user.name.hint = Vous devez indiquer votre nom pour enregistrer votre vote
+see.current.result = Voir le résultat du sondage
+vote.registered=Votre vote a bien été pris en compte

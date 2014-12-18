@@ -15,18 +15,18 @@
 		<!-- ==============================================
 		Favicons
 		=============================================== -->
-		<link rel="shortcut icon" href="assets/images/favicon.ico">
-		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+		<link rel="shortcut icon" href="@routes.Assets.at("images/favicon.png")">
+		<link rel="apple-touch-icon" href="@routes.Assets.at("images/apple-touch-icon.png")">
+		<link rel="apple-touch-icon" sizes="72x72" href="@routes.Assets.at("images/apple-touch-icon-72x72.png")">
+		<link rel="apple-touch-icon" sizes="114x114" href="@routes.Assets.at("images/apple-touch-icon-114x114.png")">
 
 		<!-- ==============================================
 		CSS
 		=============================================== -->
-		<link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
-		<link rel="stylesheet" href="assets/stylesheets/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/stylesheets/flexslider.css">
-		<link rel="stylesheet" href="assets/stylesheets/styles-9.css">
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/font-awesome.min.css")">
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/flexslider.css")">
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/styles-9.css")">
 
 		<!-- ==============================================
 		Fonts
@@ -37,7 +37,7 @@
 		=============================================== -->
 
 		<!--[if lt IE 9]>
-			<script src="assets/javascripts/libs/respond.min.js"></script>
+			<script src="@routes.Assets.at("javascripts/libs/respond.min.js")"></script>
 		<![endif]-->
 
 
@@ -49,14 +49,14 @@
 		Scripts added to work with prismic.io and prismic.io singlepage
 		===============================================
 -->
-		<script src="assets/javascripts/ejs-1.0.js"></script>
-		<!--script src="assets/javascripts/prismic.io-1.0.19.min.js"></script-->
-		<!--script src="assets/javascripts/prismic.io-1.0.26.min.js"></script-->
+		<script src="@routes.Assets.at("javascripts/ejs-1.0.js")"></script>
+		<!--script src="@routes.Assets.at("javascripts/prismic.io-1.0.19.min.js")"></script-->
+		<!--script src="@routes.Assets.at("javascripts/prismic.io-1.0.26.min.js")"></script-->
 
-		<script src="assets/javascripts/prismic.io.2.js"></script>
-		<script src="assets/javascripts/prismic.io-singlepage-1.0.0.js"></script>
+		<script src="@routes.Assets.at("javascripts/prismic.io.2.js")"></script>
+		<script src="@routes.Assets.at("javascripts/prismic.io-singlepage-1.0.0.js")"></script>
 
-<script type="text/javascript" src="assets/javascripts/libs/modernizr.min.js"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/libs/modernizr.min.js")"></script>
 
 	</head>
 
@@ -87,7 +87,7 @@
 					</button>
 
 					<!-- ======= LOGO ========-->
-					<a class="navbar-brand scrollto" href="#home"><img src="assets/images/logo-kapp-60px.png" alt="">[%= copy.getText('copy.company_name') %]</a>
+					<a class="navbar-brand scrollto" href="#home"><img src="@routes.Assets.at("images/logo-kapp-60px.png")" alt="">[%= copy.getText('copy.company_name') %]</a>
 
 				</div>
 
@@ -213,7 +213,7 @@
 
 					<div class="col-sm-6 scrollimation fade-right d1">
 
-						<img class="img-responsive polaroid" src="assets/images/about.jpg" alt="" />
+						<img class="img-responsive polaroid" src="@routes.Assets.at("images/about.jpg")" alt="" />
 
 					</div>
 
@@ -349,7 +349,7 @@
 					=============================================== -->
 					<article class="project-item coaching">
 
-						<img class="img-responsive project-image" src="assets/images/thumb.png"  alt=""><!--Project thumb -->
+						<img class="img-responsive project-image" src="@routes.Assets.at("images/thumb.png")"  alt=""><!--Project thumb -->
 
 						<div class="hover-mask">
 							<h2 class="project-title">Selbstvertrauen stärken</h2><!--Project Title -->
@@ -358,7 +358,7 @@
 
 						<!--==== Project Preview HTML ====-->
 
-						<div class="sr-only project-description" data-images="assets/images/slide.png,assets/images/slide.png" >
+						<div class="sr-only project-description" data-images="@routes.Assets.at("images/slide.png,assets/images/slide.png")" >
 
                           <p>Selbstvertrauen</p>
 <p>Möchten Sie ihr Selbstvertrauen stärken?</p>
@@ -378,7 +378,7 @@
 
 					<article class="project-item burnout coaching">
 
-						<img class="img-responsive project-image" src="assets/images/thumb.png"  alt=""><!--Project thumb -->
+						<img class="img-responsive project-image" src="@routes.Assets.at("images/thumb.png")"  alt=""><!--Project thumb -->
 
 						<div class="hover-mask">
 							<h2 class="project-title">Burnout & Depression</h2><!--Project Title -->
@@ -387,7 +387,7 @@
 
 						<!--==== Project Preview HTML ====-->
 
-						<div class="sr-only project-description" data-images="assets/images/slide.png,assets/images/slide.png" >
+						<div class="sr-only project-description" data-images="@routes.Assets.at("images/slide.png,assets/images/slide.png")" >
 
 							<p>Ein Burnout oder eine Depression können einem den Alltag nur noch schwer bewältigen lassen. Lassen Sie sich frühzeitig helfen. Durch konkrete Unterstützung können oft rasch kleine und auch grössere Veränderungen erfahren werden. </p>
 
@@ -404,7 +404,7 @@
 
 <article class="project-item coaching krisen">
 
-	<img class="img-responsive project-image" src="assets/images/thumb.png"  alt=""><!--Project thumb -->
+	<img class="img-responsive project-image" src="@routes.Assets.at("images/thumb.png")"  alt=""><!--Project thumb -->
 
 	<div class="hover-mask">
 		<h2 class="project-title">Krisen und Ängste</h2><!--Project Title -->
@@ -413,7 +413,7 @@
 
 	<!--==== Project Preview HTML ====-->
 
-	<div class="sr-only project-description" data-images="assets/images/slide.png,assets/images/slide.png" >
+	<div class="sr-only project-description" data-images="@routes.Assets.at("images/slide.png,assets/images/slide.png")" >
 
 		<p>Ich unterstütze Sie in Krisen.</p>
 
@@ -427,7 +427,7 @@
 
 <article class="project-item sucht">
 
-	<img class="img-responsive project-image" src="assets/images/thumb.png"  alt=""><!--Project thumb -->
+	<img class="img-responsive project-image" src="@routes.Assets.at("images/thumb.png")"  alt=""><!--Project thumb -->
 
 	<div class="hover-mask">
 		<h2 class="project-title">Internet Sucht</h2><!--Project Title -->
@@ -436,7 +436,7 @@
 
 	<!--==== Project Preview HTML ====-->
 
-	<div class="sr-only project-description" data-images="assets/images/slide.png,assets/images/slide.png" >
+	<div class="sr-only project-description" data-images="@routes.Assets.at("images/slide.png,assets/images/slide.png")" >
 
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>
 
@@ -449,7 +449,7 @@
 
 <article class="project-item coaching krisen">
 
-	<img class="img-responsive project-image" src="assets/images/thumb.png"  alt=""><!--Project thumb -->
+	<img class="img-responsive project-image" src="@routes.Assets.at("images/thumb.png")"  alt=""><!--Project thumb -->
 
 	<div class="hover-mask">
 		<h2 class="project-title">Coaching</h2><!--Project Title -->
@@ -458,7 +458,7 @@
 
 	<!--==== Project Preview HTML ====-->
 
-	<div class="sr-only project-description" data-images="assets/images/slide.png,assets/images/slide.png" >
+	<div class="sr-only project-description" data-images="@routes.Assets.at("images/slide.png,assets/images/slide.png")" >
 
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut porttitor nisl dapibus eu.</p>
 
@@ -633,20 +633,26 @@
 		<!--
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	-->
-		<script>window.jQuery || document.write('<script src="assets/javascripts/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
+@*
+		@scripts = {
+			<script src="@routes.Assets.at("javascripts/libs/jquery-1.8.2.min.js")"></script>
+		}
+*@
+		<script>window.jQuery || document.write('<script src="assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
 
-		<script src="assets/javascripts/libs/bootstrap.min.js"></script>
-		<script src="assets/javascripts/jquery.scrollto.js"></script>
-		<script src="assets/javascripts/waypoints.min.js"></script>
-		<script src="assets/javascripts/jquery.masonry.min.js"></script>
-		<script src="assets/javascripts/jquery.flexslider.min.js"></script>
-		<script src="assets/javascripts/jquery.backstretch.min.js"></script>
+
+		<script src="@routes.Assets.at("javascripts/libs/bootstrap.min.js")"></script>
+		<script src="@routes.Assets.at("javascripts/jquery.scrollto.js")"></script>
+		<script src="@routes.Assets.at("javascripts/waypoints.min.js")"></script>
+		<script src="@routes.Assets.at("javascripts/jquery.masonry.min.js")"></script>
+		<script src="@routes.Assets.at("javascripts/jquery.flexslider.min.js")"></script>
+		<script src="@routes.Assets.at("javascripts/jquery.backstretch.min.js")"></script>
 		<!--
-		<script src="assets/javascripts/twitterFetcher_v12.js"></script>
+		<script src="@routes.Assets.at("javascripts/twitterFetcher_v12.js")"></script>
 	-->
 		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-		<script src="assets/javascripts/contact.js"></script>
-		<script src="assets/javascripts/scripts.js"></script>
+		<script src="@routes.Assets.at("javascripts/contact.js")"></script>
+		<script src="@routes.Assets.at("javascripts/scripts.js")"></script>
 
 		<script>
 

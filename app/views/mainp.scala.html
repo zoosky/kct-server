@@ -1,4 +1,4 @@
-@(id: String, title: Option[String] = None)(content: Html)(implicit ctx: PrismicHelper.Context)
+@(id: String, title: Option[String] = None, response: io.prismic.Response)(content: Html)(implicit ctx: PrismicHelper.Context)
 
 <!DOCTYPE html>
 
@@ -95,10 +95,10 @@
           <div id="site-nav" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="sr-only">
-                <a href="@routes.Application.index" class="scrollto">Home</a>
+                <a href="@routes.Application.indexp(response.page)" class="scrollto">Home</a>
               </li>
               <li>
-                <a href="@routes.Application.about @if(id == "about") { class="selected" }" class="scrollto">[%= copy.getText('copy.services_nav_label') %]</a>
+                <a href="@routes.Application.about" @if(id == "about") { class="selected" }" class="scrollto">[%= copy.getText('copy.services_nav_label') %]</a>
               </li>
               <li>
                 <a href="#about" class="scrollto">[%= copy.getText('copy.about_nav_label') %]</a>

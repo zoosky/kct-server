@@ -13,8 +13,18 @@ object Application extends Controller with PrismicController {
 
   // -- Resolve links to documents
   def linkResolver(api: Api)(implicit request: RequestHeader) = DocumentLinkResolver(api) {
+    // For "Bookmarked" documents that use a special page
+    case (Fragment.DocumentLink(_, _, _, _, _), Some("about")) => routes.Application.about.absoluteURL()
+    case (Fragment.DocumentLink(_, _, _, _, _), Some("booking")) => routes.Application.booking.absoluteURL()
+
+      // Store documents
+    case (Fragment.DocumentLink(id, "about", _, slug, false), _) => routes.Application.about.absoluteURL()
+
     case (Fragment.DocumentLink(id, docType, tags, slug, false), maybeBookmarked) => routes.Application.detail(id, slug).absoluteURL()
     case (link@Fragment.DocumentLink(_, _, _, _, true), _)                        => routes.Application.brokenLink().absoluteURL()
+
+
+
   }
 
   // -- Page not found
@@ -25,9 +35,37 @@ object Application extends Controller with PrismicController {
   }
 
   // -- Home page
-  def index(page: Int) = PrismicAction { implicit request =>
+  def indexp(page: Int) = PrismicAction { implicit request =>
     ctx.api.forms("everything").ref(ctx.ref).pageSize(10).page(page).submit() map { response =>
-      Ok(views.html.index(response))
+      Ok(views.html.indexp(response))
+    }
+  }
+
+  // -- Home page
+  def index = PrismicAction { implicit request =>
+    for {
+      maybePage <- getBookmark("about")
+    } yield {
+      maybePage.map(page => Ok(views.html.index(page))).getOrElse(PageNotFound)
+    }
+  }
+
+  // -- About us
+  def about = PrismicAction { implicit request =>
+    for {
+      maybePage <- getBookmark("about")
+    } yield {
+      maybePage.map(page => Ok(views.html.about(page))).getOrElse(PageNotFound)
+    }
+  }
+
+  // -- Booking
+
+  def booking = PrismicAction { implicit request =>
+    for {
+      maybePage <- getBookmark("booking")
+    } yield {
+      maybePage.map(page => Ok(views.html.booking(page))).getOrElse(PageNotFound)
     }
   }
 

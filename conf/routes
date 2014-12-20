@@ -3,7 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                                           controllers.Application.index(page: Int ?= 1)
+GET     /                                           controllers.Application.index()
+GET     /indexp                                     controllers.Application.indexp(page: Int ?= 1)
+GET     /about                                      controllers.Application.about()
+GET     /booking                                    controllers.Application.booking()
 
 GET     /indexold                                  controllers.Application.indexold
 

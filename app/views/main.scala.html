@@ -4,21 +4,12 @@
 
 <html lang="de-CH" class="no-js">
     <head>
-        <title>@title</title> <!-- TODO title>Kapp Coaching & Therapie</title-->
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-
-        <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))'>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/styles.css")">
-
-        <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
-
-
-        <head>
 
           <!-- ==============================================
           Title and Meta Tags
           =============================================== -->
           <meta charset="utf-8">
+          <title>@title</title> <!-- TODO title>Kapp Coaching & Therapie</title-->
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="prismic-oauth-client-id" content="UzHD5AEAAA2GxOTo">
@@ -60,19 +51,27 @@
           Scripts added to work with prismic.io and prismic.io singlepage
           ===============================================
         -->
-        <!--script src="@routes.Assets.at("javascripts/ejs-1.0.js")"></script-->
+        <script src="@routes.Assets.at("javascripts/ejs-1.0.js")"></script>
         <!--script src="@routes.Assets.at("javascripts/prismic.io-1.0.19.min.js")"></script-->
         <!--script src="@routes.Assets.at("javascripts/prismic.io-1.0.26.min.js")"></script-->
 
-        <!--script src="@routes.Assets.at("javascripts/prismic.io.2.js")"></script-->
-        <!--script src="@routes.Assets.at("javascripts/prismic.io-singlepage-1.0.0.js")"></script-->
+        <script src="@routes.Assets.at("javascripts/prismic.io.2.js")"></script>
+        <script src="@routes.Assets.at("javascripts/prismic.io-singlepage-1.0.0.js")"></script>
 
         <script type="text/javascript" src="@routes.Assets.at("javascripts/libs/modernizr.min.js")"></script>
 
 
     </head>
 
-    <body>
+    <body data-spy="scroll" data-target="#main-nav" data-offset="200">
+
+    <script type="text/prismic-query" data-binding="copys">
+    [
+    [:d = at(document.type, "copy")]
+    ]
+    </script>
+    [% var copy = copys[0] %]
+
 
 
       <!-- ==============================================
@@ -142,8 +141,10 @@
          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
          <!--
          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-       -->
 
+       <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))'>
+       <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
+     -->
        <script>window.jQuery || document.write('<script src="@routes.Assets.at("javascripts/libs/jquery-1.8.2.min.js")">\x3C/script>')</script>
 
        <script src="@routes.Assets.at("javascripts/libs/bootstrap.min.js")"></script>
@@ -159,10 +160,10 @@
      <script src="@routes.Assets.at("javascripts/contact.js")"></script>
      <script src="@routes.Assets.at("javascripts/scripts.js")"></script>
 
-
+<!--
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
      <script>window.jQuery || document.write('<script src="@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))")"><\/script>')</script>
-
+-->
      @** Required for Previews and Experiments *@
      <script src="//static.cdn.prismic.io/prismic.min.js"></script>
      <script src="https://static.cdn.prismic.io/prismic.min.js"></script>

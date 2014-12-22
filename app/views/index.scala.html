@@ -9,9 +9,93 @@
 
   <hr>
 
-  <h2>
-Home
-  </h2>
+  <!-- ==============================================
+  HEADER
+  =============================================== -->
+  <header id="home">
+
+    <div class="container text-left">
+
+      <h1>[%= copy.getText('copy.home_title') %]</h1>
+
+      <p>[%= copy.getText('copy.home_lede') %]</p>
+
+    </div>
+
+  </header><!--End header -->
+
+  <!-- ==============================================
+  SERVICES
+  =============================================== -->
+  <section id="services" class="add-padding">
+
+    <div class="container">
+
+      <h1 class="section-title big-text scrollimation fade-up">[%= copy.getText('copy.services_title') %]</h1>
+      <!--
+      <p class="section-description lead center">[%= copy.getText('copy.services_lede') %]</p>
+    -->
+
+    <div class="row">
+
+    <script type="text/prismic-query" data-binding="services" data-query-orderings="[my.service.order]">
+    [
+    [:d = at(document.type, "service")]
+    ]
+    </script>
+
+    [% services.forEach(function(service){ %]
+      <div class="col-sm-4 item [%= service.getText('service.icon_color') %] text-center scrollimation scale-in">
+
+        <div class="service-icon"><i class="fa fa-[%= service.getText('service.icon_code') %]"></i></div>
+        <h3>[%= service.getText('service.name') %]</h3>
+        [%- service.getStructuredText('service.catcher').asHtml() %]
+
+      </div>
+      [% }) %]
+
+      <!--
+
+      <div class="col-sm-4 service-item color3 scrollimation scale-in">
+
+      <div class="service-icon"><i class="fa fa-rocket"></i></div>
+
+      <h3>Coaching</h3>
+
+      <p>Die lösungsorientierte Art bei Entscheidungsschwierigkeiten, Alltags- schulischen oder beruflichen Problemen weiterzukommen. Einmalige oder kurzfristige, effiziente Beratung. Individuell zugeschnitten auf ihre Ziele und Bedürfnisse. Spezialtarife für Jugendliche und junge Erwachsene</p>
+
+
+    </div>
+
+    <div class="col-sm-4 service-item color1 scrollimation scale-in d1">
+
+    <div class="service-icon"><i class="fa fa-lightbulb-o"></i></div>
+
+    <h3>Psychotherapie</h3>
+
+    <p>Durch die Auseinandersetzung mit Faktoren, die das Leiden verursachen eröffnen sich Ihnen neue Möglichkeiten im Denken und Handeln. Durch grundlegende Veränderungen in ihrer Sichtweise können Schmerzen und Symptome gelindert werden und Sie erfahren mehr Freude im Leben. </p>
+
+
+  </div>
+
+  <div class="col-sm-4 service-item color2 scrollimation scale-in d2">
+
+  <div class="service-icon"><i class="fa fa-desktop"></i></div>
+
+  <h3>Wo immer Sie sind</h3>
+
+  <p>Ich berate Sie wo immer Sie sind. Wir können uns sehen oder hören. Dazu benutzen wir das Telefon, das Smartphone oder einen PC. Die Online-Beratung kann für bestimmte Personen eine ideale Möglichkeit sein, einen Zugang zu psychologischer Hilfe zu erhalten.</p>
+
+</div>
+
+-->
+
+</div>
+
+</div>
+
+</section>
+
 
 
 

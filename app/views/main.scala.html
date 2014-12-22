@@ -28,7 +28,7 @@
           <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
           <link rel="stylesheet" href="@routes.Assets.at("stylesheets/font-awesome.min.css")">
           <link rel="stylesheet" href="@routes.Assets.at("stylesheets/flexslider.css")">
-          <link rel="stylesheet" href="@routes.Assets.at("stylesheets/styles-9.css")">
+          <link rel="stylesheet" href="@routes.Assets.at("stylesheets/styles.css")">
 
           <!-- ==============================================
           Fonts
@@ -87,23 +87,23 @@
             </button>
 
             <!-- ======= LOGO ========-->
-            <a class="navbar-brand scrollto" href="@routes.Application.index"><img src="@routes.Assets.at("images/logo-kapp-60px.png")" alt="">[%= copy.getText('copy.company_name') %]</a>
+            <a class="navbar-brand scrollto" href="@routes.Application.index#home"><img src="@routes.Assets.at("images/logo-kapp-60px.png")" alt="">[%= copy.getText('copy.company_name') %]</a>
 
           </div>
 
           <div id="site-nav" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="sr-only">
-                <a href="@routes.Application.index" class="scrollto">Home</a>
+                <a href="@routes.Application.index#home" class="scrollto">Home</a>
               </li>
               <li>
-                <a href="@routes.Application.index @if(id == "home") { class="selected" }" class="scrollto">Angebot = [%= copy.getText('copy.services_nav_label') %]</a>
+                <a href="@routes.Application.index#services" class="@if(id == "home") {selected} scrollto">[%= copy.getText('copy.services_nav_label') %]</a>
               </li>
               <li>
-                <a href="@routes.Application.about#about" class="scrollto">Über uns = [%= copy.getText('copy.about_nav_label') %]</a>
+                <a href="@routes.Application.about#about" class="@if(id == "about") {selected} scrollto">[%= copy.getText('copy.about_nav_label') %]</a>
               </li>
               <li>
-                <a href="@routes.Application.booking#portfolio" class="scrollto">Termin buchen = [%= copy.getText('copy.portfolio_nav_label') %]</a>
+                <a href="@routes.Application.booking#portfolio" class="@if(id == "booking") {selected} scrollto">[%= copy.getText('copy.contact_nav_label') %]</a>
               </li>
               <!--
               <li>

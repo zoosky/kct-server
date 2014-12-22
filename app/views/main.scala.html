@@ -87,7 +87,7 @@
             </button>
 
             <!-- ======= LOGO ========-->
-            <a class="navbar-brand scrollto" href="#home"><img src="@routes.Assets.at("images/logo-kapp-60px.png")" alt="">[%= copy.getText('copy.company_name') %]</a>
+            <a class="navbar-brand scrollto" href="@routes.Application.index"><img src="@routes.Assets.at("images/logo-kapp-60px.png")" alt="">[%= copy.getText('copy.company_name') %]</a>
 
           </div>
 
@@ -97,17 +97,19 @@
                 <a href="@routes.Application.index" class="scrollto">Home</a>
               </li>
               <li>
-                <a href="@routes.Application.about @if(id == "about") { class="selected" }" class="scrollto">[%= copy.getText('copy.services_nav_label') %]</a>
+                <a href="@routes.Application.index @if(id == "home") { class="selected" }" class="scrollto">Angebot = [%= copy.getText('copy.services_nav_label') %]</a>
               </li>
               <li>
-                <a href="#about" class="scrollto">[%= copy.getText('copy.about_nav_label') %]</a>
+                <a href="@routes.Application.about#about" class="scrollto">Über uns = [%= copy.getText('copy.about_nav_label') %]</a>
               </li>
               <li>
-                <a href="#portfolio" class="scrollto">[%= copy.getText('copy.portfolio_nav_label') %]</a>
+                <a href="@routes.Application.booking#portfolio" class="scrollto">Termin buchen = [%= copy.getText('copy.portfolio_nav_label') %]</a>
               </li>
+              <!--
               <li>
                 <a href="#contact" class="scrollto">[%= copy.getText('copy.contact_nav_label') %]</a>
               </li>
+            -->
             </ul>
           </div><!--End navbar-collapse -->
 
@@ -116,12 +118,7 @@
       </div><!--End main-nav -->
 
 
-      <header>
-          <a href="@routes.Application.index()">
-            <h1>Your prismic.io project</h1>
-          </a>
 
-        </header>
 
 
 

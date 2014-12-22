@@ -2,7 +2,178 @@
 
 @main(id = "about", title) {
 
-<h1>about</h1>
+  <!-- ==============================================
+  ABOUT
+  =============================================== -->
+  <section id="about" class="add-padding bg-color2">
 
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-6 scrollimation fade-right d1">
+
+          <img class="img-responsive polaroid" src="@routes.Assets.at("images/about.jpg")" alt="" />
+
+        </div>
+
+        <div class="col-sm-6 scrollimation fade-left d3">
+
+          <h1 class="big-text">Ich bin <br/>Andrea Kapp </h1>
+
+          <p class="lead">Ich bin eine herzliche, vielseitig interessierte Psychotherapeutin mit dem Fachtitel als "Fachpsychologin für Psychotherapie FSP" und einem Masterabschluss in Psychologie von der Universität Bern.
+          </p>
+
+
+
+
+          <p>Seit rund 7 Jahren arbeite ich als Psychologin in unterschiedlichen Bereichen. Erfahrungen habe ich unter anderem mit der Behandlung von Depressionen, Stressbewältigung (Burnout), Sucht, Ängsten, Selbstwertproblemen, Menschen in Lebenskrisen oder auf der Suche nach ihrem eigenen Weg, erfahren.  </p>
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==============================================
+  SKILLS
+  =============================================== -->
+  <section id="skills" class="add-padding border-bottom-color2">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-6 col-md-5 text-right scrollimation fade-up d1">
+
+          <h1 class="big-text">Wie wirkt<br/>meine Arbeit </h1>
+
+          <p class="lead">Ich biete Ihnen Psychotherapie und Coaching nach neusten wissenschaftlich überprüften Methoden an. Ich habe ein Gespür Sie dort abzuholen und zu begleiten, wo Sie gerade stehen. Ich arbeite sehr ressourcenorientiert und glaube an die Selbstheilungskräfte in allen Menschen. </p>
+
+          <p>Ich unterstütze Sie mit effektiven Methoden für eine ganzheitliche Verbesserung ihres Wohlbefindens und ihrer Zufriedenheit. Konkrete Übungen, Überprüfung und Veränderung ihrer Denkmuster, Akzeptieren, liebevoller Umgang mit sich selbst. Meine Arbeit motiviert, erklärt, ist lösungsorientiert. Ich habe sehr gute Erfahrungen mit Kurzzeittherapie von 3-10 Sitzungen und sporadischen Sitzungen zur Aufrechterhaltung der Verbesserungen.</p>
+
+        </div>
+
+        <div class="col-sm-6 col-md-5 col-md-offset-1">
+
+          <div class="skills-bars">
+
+            <div class="skills-item skill1">
+              <span class="percent" data-percent="100">100%</span>
+              <p>motiviert</p>
+            </div>
+            <div class="skills-item skill2">
+              <span class="percent" data-percent="90">90%</span>
+              <p>effizient</p>
+            </div>
+            <div class="skills-item skill3">
+              <span class="percent" data-percent="60">60%</span>
+              <p>erklärt</p>
+            </div>
+            <div class="skills-item skill4">
+              <span class="percent" data-percent="100">100%</span>
+              <p>verändert</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================================
+  CONTACT
+  =============================================== -->
+  <section id="contact" class="add-padding">
+
+    <div class="container text-center">
+
+      <div class="row">
+
+        <div class="col-sm-6 col-md-5 text-right scrollimation fade-up d1">
+
+          <h1 class="big-text">Rufen Sie mich an</h1>
+
+          <p class="lead">Oder schreiben Sie mir einfach.<br>
+            Ich freue mich auf Sie.</p>
+
+            <p class="lead">Andrea Kapp<br>
+              Coaching &amp; Therapie<br>
+              Markgasse 28<br>
+              3011 Bern</p>
+              <p class="lead">+41 79 942 83 39</p>
+
+            </div>
+
+            <!--=== Contact Form ===-->
+            <!--
+            <form id="contact-form" class="col-sm-6 col-md-offset-1 scrollimation fade-left d3" action="contact.php" method="post" novalidate>
+          -->
+          <form id="contact-form" class="col-sm-6 col-md-offset-1 scrollimation fade-left d3" action="http://forms.brace.io/coaching-therapie@@kapp.ch" method="post" novalidate>
+
+            <div class="form-group">
+              <label class="control-label" for="contact-name">Name</label>
+              <div class="controls">
+
+
+                <input id="contact-name" name="name" placeholder="Ihr Name" class="form-control requiredField" data-new-placeholder="Your name" type="text" data-error-empty="Bitte geben Sie ihren Namen ein">
+
+                <i class="fa fa-user"></i>
+              </div>
+            </div><!-- End name input -->
+
+            <div class="form-group">
+              <label class="control-label" for="contact-mail">Email</label>
+              <div class=" controls">
+
+                <input id="contact-mail" name="_replyto" placeholder="Ihre Email" class="form-control requiredField" data-new-placeholder="Your email" type="email" data-error-empty="Bitte geben Sie ihre Email ein" data-error-invalid="Ungültige Email Adresse">
+                <i class="fa fa-envelope"></i>
+              </div>
+            </div><!-- End email input -->
+
+            <div class="form-group">
+              <label class="control-label" for="contact-message">Message</label>
+              <div class="controls">
+
+                <textarea id="contact-message" name="message"  placeholder="Ihre Nachricht" class="form-control requiredField" data-new-placeholder="Your message" rows="6" data-error-empty="Bitte erfassen Sie ihre Nachricht"></textarea>
+                <i class="fa fa-comment"></i>
+              </div>
+            </div><!-- End textarea -->
+
+            <input type="hidden" name="_next" value="http://kapp.ch/index.html" />
+
+            <p><button name="submit" type="submit" class="btn btn-color2 btn-block" data-error-message="Eingabefehler!" data-sending-message="Am Senden..." data-ok-message="Message geschickt"><i class="fa fa-paper-plane"></i>Nachricht abschicken</button></p>
+
+            <input type="hidden" name="submitted" id="submitted" value="true" />
+
+          </form><!-- End contact-form -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==============================================
+    MAP
+    =============================================== -->
+    <section id="map">
+
+      <div id="gmap"></div>
+
+    </section>
 
 }

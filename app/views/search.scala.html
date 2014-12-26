@@ -2,6 +2,10 @@
 
 @main("Search results") {
 
+  <section id="search" class="add-padding bg-color1">
+
+    <div class="container">
+
   <h1>
     @response.resultsSize match {
       case 0 => { No results found }
@@ -36,5 +40,8 @@
   <p>
     <a href="@routes.Application.index()">Back to home</a>
   </p>
+
+</div>
+</section>
 
 }

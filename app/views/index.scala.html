@@ -1,6 +1,6 @@
-@(about: io.prismic.Document)(implicit ctx: PrismicHelper.Context)
+@(docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
 
-@main(id = "home", Some("All documents")) {
+@main(id = "home", Some("Angebot")) {
 
 
   <!-- ==============================================
@@ -91,6 +91,6 @@
 </section>
 
 
-
+@section(docs)
 
 }

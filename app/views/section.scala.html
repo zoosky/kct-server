@@ -1,0 +1,29 @@
+@(docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
+
+@docs.map { doc =>
+  <section id="about" class="add-padding bg-color2">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-6 scrollimation fade-right d1">
+
+          <img class="img-responsive polaroid" src="@(doc.getImage("article.illustration.main", "icon").map(_.url).getOrElse(routes.Assets.at("images/missing-image.png")))" alt="" />
+
+        </div>
+
+        <div class="col-sm-6 scrollimation fade-left d3">
+
+          <h1 class="big-text">@doc.getText("article.title").getOrElse("article.title") </h1>
+
+          <p class="lead">@doc.getText("article.longlede").getOrElse("")</p>
+
+          <p>@doc.getStructuredText("article.content")</p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+}

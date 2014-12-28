@@ -1,12 +1,12 @@
-@(booking: io.prismic.Document, title: Option[String] = None)(implicit ctx: PrismicHelper.Context)
+@(docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
 
-@main(id = "booking", title) {
+@main(id = "booking", Option("Termin buchen")) {
 
   <section id="about" class="add-padding bg-color3">
 
     <div class="container">
 
-      <h1>Booking:  @title </h1>
+      <h1>Booking:  </h1>
       <p>
       <a href="http://www.supersaas.de/schedule/kappcoachingtherapie/sitzung">
         <img src="http://cdn.supersaas.net/en/but/book_now_star_red.png" alt="Book Now"/>
@@ -17,5 +17,7 @@
 
     </div>
   </div>
+
+ @section(docs)
 
 }

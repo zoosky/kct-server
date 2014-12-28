@@ -1,6 +1,6 @@
-@(about: io.prismic.Document, title: Option[String] = None)(implicit ctx: PrismicHelper.Context)
+@(docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
 
-@main(id = "about", title) {
+@main(id = "about", Option("Über uns")) {
 
   <!-- ==============================================
   ABOUT
@@ -93,6 +93,7 @@
 
   </section>
 
+  @section(docs)
 
   <!-- ==============================================
   CONTACT

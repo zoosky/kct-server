@@ -43,24 +43,26 @@ object Application extends Controller with PrismicController {
 
   // -- Home page
   def index = PrismicAction { implicit request =>
-    for {
-      maybePage <- getBookmark("about")
-    } yield {
-      maybePage.map(page => Ok(views.html.index(page))).getOrElse(PageNotFound)
+    ctx.api.forms("angebot").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").submit() map { response =>
+      Ok(views.html.index(response.results))
     }
   }
 
   // -- About us
   def about = PrismicAction { implicit request =>
-    for {
-      maybePage <- getBookmark("about")
-    } yield {
-      maybePage.map(page => Ok(views.html.about(page))).getOrElse(PageNotFound)
+    ctx.api.forms("ueberuns").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").submit() map { response =>
+      Ok(views.html.about(response.results))
     }
   }
 
   // -- Booking
+  def booking = PrismicAction { implicit request =>
+    ctx.api.forms("termin").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").submit() map { response =>
+      Ok(views.html.booking(response.results))
+    }
+  }
 
+/*
   def booking = PrismicAction { implicit request =>
     for {
       maybePage <- getBookmark("booking")
@@ -68,7 +70,7 @@ object Application extends Controller with PrismicController {
       maybePage.map(page => Ok(views.html.booking(page))).getOrElse(PageNotFound)
     }
   }
-
+*/
   // -- Home old page
   def indexold = Action { implicit request =>
       Ok(views.html.indexold())

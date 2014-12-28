@@ -1,26 +1,75 @@
 @(docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
 
 @docs.map { doc =>
-  <section id="about" class="add-padding bg-color2">
+  <section id="about" class="add-padding @doc.getText("article.bgcolor").getOrElse("") @doc.getText("article.bottomlinecolor").getOrElse("") ">
     <div class="container">
 
       <div class="row">
 
-        <div class="col-sm-6 scrollimation fade-right d1">
+        @defining(doc.getText("article.imageposition").getOrElse("")) { layout =>
 
-          <img class="img-responsive polaroid" src="@(doc.getImage("article.illustration.main", "icon").map(_.url).getOrElse(routes.Assets.at("images/missing-image.png")))" alt="" />
+        @layout match {
 
-        </div>
+          case "Rechts" => {
 
-        <div class="col-sm-6 scrollimation fade-left d3">
+            <!-- div class="col-sm-6 scrollimation fade-right d1" -->
+            <div class="col-sm-6 col-md-5 text-right scrollimation fade-up d1">
+              <h1 class="big-text">@doc.getText("article.title").getOrElse("article.title") </h1>
 
-          <h1 class="big-text">@doc.getText("article.title").getOrElse("article.title") </h1>
+              <p class="lead">@doc.getText("article.longlede").getOrElse("")</p>
 
-          <p class="lead">@doc.getText("article.longlede").getOrElse("")</p>
+              <p>@doc.getHtml("article.content", ctx.linkResolver).map(Html.apply)</p>
 
-          <p>@doc.getStructuredText("article.content")</p>
+              @*         @doc.getStructuredText("article.content").flatMap(_.getTitle).map(_.text).map { title => <h2>@title</h2> }
+              @doc.getStructuredText("article.content").flatMap(_.getFirstParagraph).map(_.text).map { text => <p>@text</p> }
+              *@
+            </div>
 
-        </div>
+            <!-- div class="col-sm-6 scrollimation fade-left d3" -->
+            <div class="col-sm-6 col-md-5 col-md-offset-1 scrollimation fade-left d3">
+
+              <img class="img-responsive polaroid" src="@(doc.getImage("article.illustration", "main").map(_.url).getOrElse(routes.Assets.at("images/missing-image.png")))" alt="" />
+
+
+            </div>
+
+          }
+
+          case "Zentriert" => {
+
+            <div class="col-sm-12 col-md-11 scrollimation fade-up d1">
+              <h1 class="big-text">@doc.getText("article.title").getOrElse("article.title") </h1>
+              <p class="lead">@doc.getText("article.longlede").getOrElse("")</p>
+              <p>@doc.getHtml("article.content", ctx.linkResolver).map(Html.apply)</p>
+
+            </div>
+
+          }
+
+          case _ =>  {
+
+            <div class="col-sm-6 scrollimation fade-right d1">
+
+              <img class="img-responsive polaroid" src="@(doc.getImage("article.illustration", "main").map(_.url).getOrElse(routes.Assets.at("images/missing-image.png")))" alt="" />
+
+            </div>
+
+            <div class="col-sm-6 scrollimation fade-left d3">
+
+              <h1 class="big-text">@doc.getText("article.title").getOrElse("article.title") </h1>
+
+              <p class="lead">@doc.getText("article.longlede").getOrElse("")</p>
+
+              <p>@doc.getHtml("article.content", ctx.linkResolver).map(Html.apply)</p>
+
+
+            </div>
+
+          }
+        }
+
+    }
+
 
       </div>
 

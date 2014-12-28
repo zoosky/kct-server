@@ -2,6 +2,21 @@
 
 @main(s"Document detail ${document.slug}") {
 
+  <!-- ==============================================
+  HEADER
+  =============================================== -->
+  <header id="detail">
+
+    <div class="container text-left">
+
+      <h1>@document.slug</h1>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt, dui ac porta.</p>
+
+    </div>
+
+  </header><!--End header -->
+
     <article id="@document.id">
       @Html(document.asHtml(ctx.linkResolver))
     </article>

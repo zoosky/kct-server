@@ -36,7 +36,7 @@ object Application extends Controller with PrismicController {
 
   // -- Home page
   def indexp(page: Int) = PrismicAction { implicit request =>
-    ctx.api.forms("everything").ref(ctx.ref).pageSize(10).page(page).submit() map { response =>
+    ctx.api.forms("angebot").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").page(page).submit() map { response =>
       Ok(views.html.indexp(response))
     }
   }

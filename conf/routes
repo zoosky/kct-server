@@ -7,6 +7,8 @@ GET     /                                           controllers.Application.inde
 GET     /indexp                                     controllers.Application.indexp(page: Int ?= 1)
 GET     /about                                      controllers.Application.about()
 GET     /booking                                    controllers.Application.booking()
+GET     /faq                                        controllers.Application.faq()
+GET     /bedingungen                                controllers.Application.bedingungen()
 
 GET     /indexold                                  controllers.Application.indexold
 

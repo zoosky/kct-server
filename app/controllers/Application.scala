@@ -23,8 +23,6 @@ object Application extends Controller with PrismicController {
     case (Fragment.DocumentLink(id, docType, tags, slug, false), maybeBookmarked) => routes.Application.detail(id, slug).absoluteURL()
     case (link@Fragment.DocumentLink(_, _, _, _, true), _)                        => routes.Application.brokenLink().absoluteURL()
 
-
-
   }
 
   // -- Page not found
@@ -43,34 +41,64 @@ object Application extends Controller with PrismicController {
 
   // -- Home page
   def index = PrismicAction { implicit request =>
-    ctx.api.forms("angebot").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").submit() map { response =>
-      Ok(views.html.index(response.results))
+    for {
+      angebot <- ctx.api.forms("angebot").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").submit()
+      firma <- ctx.api.forms("everything").ref(ctx.ref).query(Predicate.at("document.type", "copy")).submit()
+      services <- ctx.api.forms("everything").ref(ctx.ref).query(Predicate.at("document.type", "service")).orderings("[my.service.order]").submit()
+    } yield {
+      Ok(views.html.index(firma.results.head, services.results, angebot.results))
     }
   }
 
+
+
   // -- About us
   def about = PrismicAction { implicit request =>
-    ctx.api.forms("ueberuns").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").submit() map { response =>
-      Ok(views.html.about(response.results))
+    for {
+      ueber <- ctx.api.forms("ueberuns").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").submit()
+      firma <- ctx.api.forms("everything").ref(ctx.ref).query(Predicate.at("document.type", "copy")).submit()
+    } yield {
+      Ok(views.html.about(firma.results.head, ueber.results))
     }
   }
 
   // -- Booking
   def booking = PrismicAction { implicit request =>
-    ctx.api.forms("termin").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").submit() map { response =>
-      Ok(views.html.booking(response.results))
+    for {
+    termin <- ctx.api.forms("termin").ref(ctx.ref).pageSize(10).orderings("[my.article.order]").submit()
+    firma <- ctx.api.forms("everything").ref(ctx.ref).query(Predicate.at("document.type", "copy")).submit()
+  } yield {
+      Ok(views.html.booking(firma.results.head, termin.results))
     }
   }
 
-/*
-  def booking = PrismicAction { implicit request =>
+  // -- FAQ
+
+  def faq = PrismicAction { implicit request =>
     for {
-      maybePage <- getBookmark("booking")
-    } yield {
-      maybePage.map(page => Ok(views.html.booking(page))).getOrElse(PageNotFound)
+    faq <- ctx.api.forms("faq").ref(ctx.ref).pageSize(20).orderings("[my.article.order]").submit()
+    firma <- ctx.api.forms("everything").ref(ctx.ref).query(Predicate.at("document.type", "copy")).submit()
+  } yield {
+      Ok(views.html.faq(firma.results.head, faq))
     }
   }
-*/
+
+  // -- AGB
+
+  def bedingungen = PrismicAction { implicit request =>
+    for {
+      maybePage <- getBookmark("agb")
+      firma <- ctx.api.forms("everything").ref(ctx.ref).query(Predicate.at("document.type", "copy")).submit()
+
+    } yield {
+      maybePage.map(page => Ok(views.html.detail(firma.results.head, page))).getOrElse(PageNotFound)
+    }
+  }
+
+
+
+
+
   // -- Home old page
   def indexold = Action { implicit request =>
       Ok(views.html.indexold())
@@ -81,10 +109,11 @@ object Application extends Controller with PrismicController {
   def detail(id: String, slug: String) = PrismicAction { implicit request =>
     for {
       maybeDocument <- getDocument(id)
+      firma <- ctx.api.forms("everything").ref(ctx.ref).query(Predicate.at("document.type", "copy")).submit()
     } yield {
       checkSlug(maybeDocument, slug) {
         case Left(newSlug)   => MovedPermanently(routes.Application.detail(id, newSlug).url)
-        case Right(document) => Ok(views.html.detail(document))
+        case Right(document) => Ok(views.html.detail(firma.results.head, document))
       }
     }
   }

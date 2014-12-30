@@ -1,6 +1,6 @@
-@(docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
+@(firma: io.prismic.Document, docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
 
-@main(id = "about", Option("Über uns")) {
+@main(firma, id = "about", Option("Über uns")) {
 
   <!-- ==============================================
   HEADER

@@ -1,13 +1,13 @@
-@(docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
+@(firma: io.prismic.Document, docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
 
-@main(id = "booking", Option("Termin buchen")) {
+@main(firma, id = "booking", Option("Termin buchen")) {
 
   <!-- ==============================================
   HEADER
   =============================================== -->
   <header id="home">
 
-    <div class="container text-left"style="color: f58026;">
+    <div class="container text-left" style="color: f58026;">
 
       <h1>Einen Schritt tun</h1>
 
@@ -18,16 +18,9 @@
   </header><!--End header -->
 
 
-  <section id="about" class="add-padding bg-color2">
+  <section id="booking" class="add-padding bg-color2">
 
     <div class="container">
-
-      <h1>Booking:  </h1>
-      <p>
-      <a href="http://www.supersaas.de/schedule/kappcoachingtherapie/sitzung">
-        <img src="http://cdn.supersaas.net/en/but/book_now_star_red.png" alt="Book Now"/>
-      </a>
-</p>
       <iframe seamless="seamless" height="800px" width="800px" src="http://www.supersaas.de/schedule/kappcoachingtherapie/sitzung">
       </iframe>
 

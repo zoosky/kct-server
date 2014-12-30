@@ -1,21 +1,14 @@
-@(document: io.prismic.Document)(implicit ctx: PrismicHelper.Context)
+@(firma: io.prismic.Document, document: io.prismic.Document)(implicit ctx: PrismicHelper.Context)
 
-@main(s"Document detail ${document.slug}") {
+@main(firma, "Detail") {
 
   <!-- ==============================================
   HEADER
   =============================================== -->
-  <header id="detail">
 
-    <div class="container text-left">
+  @section(List(document))
 
-      <h1>@document.slug</h1>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt, dui ac porta.</p>
-
-    </div>
-
-  </header><!--End header -->
+  <hr>
 
     <article id="@document.id">
       @Html(document.asHtml(ctx.linkResolver))

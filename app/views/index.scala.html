@@ -1,6 +1,6 @@
-@(docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
+@(firma: io.prismic.Document, services: Seq[io.prismic.Document], docs: Seq[io.prismic.Document])(implicit ctx: PrismicHelper.Context)
 
-@main(id = "home", Some("Angebot")) {
+@main(firma, id = "home", Some("Angebot")) {
 
 
   <!-- ==============================================
@@ -10,9 +10,9 @@
 
     <div class="container text-left">
 
-      <h1>[%= copy.getText('copy.home_title') %]</h1>
+      <h1>@firma.getText("copy.home_title")</h1>
 
-      <p>[%= copy.getText('copy.home_lede') %]</p>
+      <p>@firma.getText("copy.home_lede")</p>
 
     </div>
 
@@ -25,28 +25,23 @@
 
     <div class="container">
 
-      <h1 class="section-title big-text scrollimation fade-up">[%= copy.getText('copy.services_title') %]</h1>
+      <h1 class="section-title big-text scrollimation fade-up">@firma.getText("copy.services_title")</h1>
       <!--
-      <p class="section-description lead center">[%= copy.getText('copy.services_lede') %]</p>
+      <p class="section-description lead center">@firma.getText("copy.services_lede")</p>
     -->
 
     <div class="row">
 
-    <script type="text/prismic-query" data-binding="services" data-query-orderings="[my.service.order]">
-    [
-    [:d = at(document.type, "service")]
-    ]
-    </script>
+    @services.map { service =>
+      <div class="col-sm-4 item @service.getText("service.icon_color") text-center scrollimation scale-in">
 
-    [% services.forEach(function(service){ %]
-      <div class="col-sm-4 item [%= service.getText('service.icon_color') %] text-center scrollimation scale-in">
+        <div class="service-icon"><i class="fa fa-@service.getText("service.icon_code")"></i></div>
+        <h3>@service.getText("service.name")</h3>
 
-        <div class="service-icon"><i class="fa fa-[%= service.getText('service.icon_code') %]"></i></div>
-        <h3>[%= service.getText('service.name') %]</h3>
-        [%- service.getStructuredText('service.catcher').asHtml() %]
+        @service.getHtml("service.catcher", ctx.linkResolver).map(Html.apply)
 
       </div>
-      [% }) %]
+      }
 
       <!--
 

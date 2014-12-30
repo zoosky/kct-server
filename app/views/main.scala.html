@@ -1,4 +1,4 @@
-@(id: String, title: Option[String] = None)(content: Html)(implicit ctx: PrismicHelper.Context)
+@(firma: io.prismic.Document, id: String, title: Option[String] = None)(content: Html)(implicit ctx: PrismicHelper.Context)
 
 <!DOCTYPE html>
 
@@ -42,37 +42,11 @@
           <script src="@routes.Assets.at("javascripts/libs/respond.min.js")"></script>
           <![endif]-->
 
-
-
-          <meta name="prismic-api" content="https://kapp.prismic.io/api">
-          <!--meta name="prismic-oauth-client-id" content=""-->
-
-          <!-- ==============================================
-          Scripts added to work with prismic.io and prismic.io singlepage
-          ===============================================
-        -->
-        <script src="@routes.Assets.at("javascripts/ejs-1.0.js")"></script>
-        <!--script src="@routes.Assets.at("javascripts/prismic.io-1.0.19.min.js")"></script-->
-        <!--script src="@routes.Assets.at("javascripts/prismic.io-1.0.26.min.js")"></script-->
-
-        <script src="@routes.Assets.at("javascripts/prismic.io.2.js")"></script>
-        <script src="@routes.Assets.at("javascripts/prismic.io-singlepage-1.0.0.js")"></script>
-
         <script type="text/javascript" src="@routes.Assets.at("javascripts/libs/modernizr.min.js")"></script>
-
 
     </head>
 
     <body data-spy="scroll" data-target="#main-nav" data-offset="200">
-
-    <script type="text/prismic-query" data-binding="copys">
-    [
-    [:d = at(document.type, "copy")]
-    ]
-    </script>
-    [% var copy = copys[0] %]
-
-
 
       <!-- ==============================================
       MAIN NAV
@@ -97,17 +71,17 @@
                 <a href="@routes.Application.index#home" class="scrollto">Home</a>
               </li>
               <li>
-                <a href="@routes.Application.index#services" class="@if(id == "home") {selected} scrollto">[%= copy.getText('copy.services_nav_label') %]</a>
+                <a href="@routes.Application.index#services" class="@if(id == "home") {selected} scrollto">@firma.getText("copy.services_nav_label")</a>
               </li>
               <li>
-                <a href="@routes.Application.about#about" class="@if(id == "about") {selected} scrollto">[%= copy.getText('copy.about_nav_label') %]</a>
+                <a href="@routes.Application.about#about" class="@if(id == "about") {selected} scrollto">@firma.getText("copy.about_nav_label")</a>
               </li>
               <li>
-                <a href="@routes.Application.booking#portfolio" class="@if(id == "booking") {selected} scrollto">[%= copy.getText('copy.contact_nav_label') %]</a>
+                <a href="@routes.Application.booking#booking" class="@if(id == "booking") {selected} scrollto">@firma.getText("copy.contact_nav_label")</a>
               </li>
               <!--
               <li>
-                <a href="#contact" class="scrollto">[%= copy.getText('copy.contact_nav_label') %]</a>
+                <a href="#contact" class="scrollto">[%= copy.getText("copy.contact_nav_label") %]</a>
               </li>
             -->
             </ul>
